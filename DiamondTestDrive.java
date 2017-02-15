@@ -9,7 +9,8 @@ public class DiamondTestDrive {
 
         d.isoscelesTriangle(6);
         System.out.println(" ");
-
+        d.drawDiamond(6);
+        System.out.println(" ");
     }
 
 }
