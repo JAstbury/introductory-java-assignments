@@ -3,16 +3,18 @@
  */
 public class Diamond {
 
-    public void isoscelesTriangle(int num) {
-        for (int i = 0; i < num; i++) {
+    public void isoscelesTriangle(int num, boolean diamond) {
+        int lines = diamond ? num - 1 : num;
+        for (int i = 0; i < lines; i++) {
             printSpaces(num, i);
             printStars(i);
             System.out.println("");
         }
     }
 
-    public void reverseIsoscelesTriangle(int num) {
-        for (int i = num - 1; i > 0; i--) {
+    public void reverseIsoscelesTriangle(int num, boolean diamond) {
+        int lines = diamond ? num - 1 : num;
+        for (int i = lines; i > 0; i--) {
             printSpaces(num + 1, i);
             printStars(i - 1);
             System.out.println("");
@@ -29,9 +31,21 @@ public class Diamond {
             System.out.print("*");
     }
 
+    public void middleLine(int size) {
+        printStars(size - 1);
+        System.out.println();
+    }
+
     public void drawDiamond(int num) {
-        isoscelesTriangle(num );
-        reverseIsoscelesTriangle(num);
+        isoscelesTriangle(num, true);
+        middleLine(num);
+        reverseIsoscelesTriangle(num, true);
+    }
+
+    public void drawDiamondName(int num, String name) {
+        isoscelesTriangle(num, true );
+        System.out.println(name);
+        reverseIsoscelesTriangle(num, true);
     }
 
 

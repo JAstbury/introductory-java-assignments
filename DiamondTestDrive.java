@@ -7,9 +7,11 @@ public class DiamondTestDrive {
 
         Diamond d = new Diamond();
 
-        d.isoscelesTriangle(6);
+        d.isoscelesTriangle(6, false);
         System.out.println(" ");
         d.drawDiamond(6);
+        System.out.println(" ");
+        d.drawDiamondName(6, "Jess");
         System.out.println(" ");
     }
 
