@@ -12,30 +12,6 @@ public class Diamond {
         }
     }
 
-    public void reverseIsoscelesTriangle(int num, boolean diamond) {
-        int lines = diamond ? num - 1 : num;
-        for (int i = lines; i > 0; i--) {
-            printSpaces(num + 1, i);
-            printStars(i - 1);
-            System.out.println("");
-        }
-    }
-
-    public void printSpaces(int size, int line) {
-        for (int x = line; x < size - 1; x++)
-            System.out.print(" ");
-    }
-
-    public void printStars(int line) {
-        for (int x = 0; x < line * 2 + 1; x++)
-            System.out.print("*");
-    }
-
-    public void middleLine(int size) {
-        printStars(size - 1);
-        System.out.println();
-    }
-
     public void drawDiamond(int num) {
         isoscelesTriangle(num, true);
         middleLine(num);
@@ -46,6 +22,30 @@ public class Diamond {
         isoscelesTriangle(num, true );
         System.out.println(name);
         reverseIsoscelesTriangle(num, true);
+    }
+
+    private void reverseIsoscelesTriangle(int num, boolean diamond) {
+        int lines = diamond ? num - 1 : num;
+        for (int i = lines; i > 0; i--) {
+            printSpaces(num + 1, i);
+            printStars(i - 1);
+            System.out.println("");
+        }
+    }
+
+    private void printSpaces(int size, int line) {
+        for (int x = line; x < size - 1; x++)
+            System.out.print(" ");
+    }
+
+    private void printStars(int line) {
+        for (int x = 0; x < line * 2 + 1; x++)
+            System.out.print("*");
+    }
+
+    private void middleLine(int size) {
+        printStars(size - 1);
+        System.out.println();
     }
 
 
